@@ -4,19 +4,19 @@ import { IndexableType } from 'dexie'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
-type product = {
-    id: number
-    title: string
-    description: string
-    category: string
-    price: string
-    image: string
-    rating: number
-}
+// type product = {
+//     id: number
+//     title: string
+//     description: string
+//     category: string
+//     price: string
+//     image: string
+//     rating: number
+// }
 
 export default function Home({ params }: { params: { product: number } }){
     const [ imageFile, setImageFile ] = useState<Blob>()
-    const [ productData, setProductData ] = useState<product>()
+    const [ productData, setProductData ] = useState<any>()
     const [updateSuccess, setUpdateSuccess] = useState(false)
     const router = useRouter()
     const categories = [ "electronics", "jewelery", "men's clothing", "women's clothing" ]
