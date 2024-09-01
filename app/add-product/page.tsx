@@ -124,8 +124,8 @@ export default function Home(){
             >
                 <option value="electronics">electronics</option>
                 <option value="jevelery">jewelery</option>  
-                <option value="men's clothing">men's clothing</option>
-                <option value="women's clothing">women's clothing</option>  
+                <option value="men's clothing">men&apos;s clothing</option>
+                <option value="women's clothing">women&apos;s clothing</option>  
             </select>
 
             <input
