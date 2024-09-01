@@ -28,7 +28,7 @@ export default function Home(){
     const [addSuccess, setAddSuccess] = useState(false)
     const router = useRouter()
 
-    function handleChange(event: Event) {
+    function handleChange(event: { target: { name: string; value: any } }) {
         setProductData( (prev: any) => {
             if(event.target.name === "price"){
                 return { ...prev, [event.target.name]: Number(event.target.value) }
@@ -37,13 +37,13 @@ export default function Home(){
         })
     }
 
-    async function handleSubmit(event: Event) {
+    async function handleSubmit(event: { preventDefault: () => void }) {
         event.preventDefault()
         const formData = new FormData()
         if(!imageFile) return
         formData.append('image', imageFile)
         
-        async function addId(data) {
+        async function addId(data: { image: any; id: number; title: string; description: string; price: number; category: string; rating: number }) {
             const temp = db.table('items').orderBy('id').reverse().toArray().then((items) => {
                 if (items.length > 0) {
                     const largestItem = items[0];
@@ -58,11 +58,11 @@ export default function Home(){
             return temp;
         }
 
-        async function addImage(imageData) {
+        async function addImage(imageData: any) {
             return { ...productData, ["image"] : imageData }
         }
 
-        async function addData(productData) {
+        async function addData(productData: { id: any; image: any; title: string; description: string; price: number; category: string; rating: number } | undefined) {
             console.log(productData)
             db.table('items').add(productData).then(() => {
                 setAddSuccess( prev => !prev )

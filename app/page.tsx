@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react';
 import { Star1 } from 'iconsax-react'
-import Skeleton from 'react-loading-skeleton'
 import { db } from '@/app/db'
 // import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -46,7 +45,7 @@ export default function Home() {
     return jsxArr
   }
 
-  function handlePriceChange(event){
+  function handlePriceChange(event: { target: { name: any; value: any; }; }){
     setPriceRange( (prev) => {
       return { ...prev, [event.target.name]: Number(event.target.value) }
     } )
@@ -79,7 +78,7 @@ export default function Home() {
     return `${iv.toString('hex')}:${encrypted}`;
   }
 
-  const handleClick = (index) => {
+  const handleClick = (index: { id: any; title: any; description?: string; price?: number; image?: string; category?: string; rating?: number; decription?: any; }) => {
     const query = { productId:  index.id, productTitle: index.title, productDescription: index.decription }
     const product = encryptObject(query)
     router.push(`/products/${product}`);

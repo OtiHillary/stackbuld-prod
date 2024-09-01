@@ -1,16 +1,27 @@
 'use client'
 import { db } from '@/app/db'
+import { IndexableType } from 'dexie'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
+type product = {
+    id: number
+    title: string
+    description: string
+    category: string
+    price: string
+    image: string
+    rating: number
+}
+
 export default function Home({ params }: { params: { product: number } }){
     const [ imageFile, setImageFile ] = useState<Blob>()
-    const [ productData, setProductData ] = useState()
+    const [ productData, setProductData ] = useState<product>()
     const [updateSuccess, setUpdateSuccess] = useState(false)
     const router = useRouter()
     const categories = [ "electronics", "jewelery", "men's clothing", "women's clothing" ]
 
-    function handleChange(event) {
+    function handleChange(event: { target: { name: string; value: any } }) {
         setProductData( (prev: any) => {
             if(event.target.name === "price"){
                 return { ...prev, [event.target.name]: Number(event.target.value) }
@@ -19,7 +30,7 @@ export default function Home({ params }: { params: { product: number } }){
         })
     }
 
-    async function handleSubmit(event) {
+    async function handleSubmit(event: { preventDefault: () => void }) {
         event.preventDefault()
         const formData = new FormData()
 
@@ -39,7 +50,7 @@ export default function Home({ params }: { params: { product: number } }){
         }
         formData.append('image', imageFile)
         
-        async function addId(data) {
+        async function addId(data: any) {
             const temp = db.table('items').orderBy('id').reverse().toArray().then((items) => {
                 if (items.length > 0) {
                     const largestItem = items[0];
@@ -54,11 +65,11 @@ export default function Home({ params }: { params: { product: number } }){
             return temp;
         }
 
-        async function addImage(imageData) {
+        async function addImage(imageData: any) {
             return { ...productData, ["image"] : imageData }
         }
 
-        async function addData(productData) {
+        async function addData(productData: (obj: any, ctx: { value: any; primKey: IndexableType }) => void | boolean) {
             console.log(productData)
             db.table('items').update(Number(params.product), productData).then(() => {
                 console.log('item(s) updated successfully');
