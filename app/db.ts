@@ -1,5 +1,7 @@
-import Dexie from 'dexie';
-export const db = new Dexie('myDatabase');
+import Dexie from "dexie";
+import { indexedDB, IDBKeyRange } from "fake-indexeddb";
+
+export const db = new Dexie("MyDatabase", { indexedDB: indexedDB, IDBKeyRange: IDBKeyRange });
 
 const items =
     [
@@ -193,8 +195,8 @@ db.table('items').count().then((count) => {
   console.log('items in db is', count)
 
   if( count === 0 ){
-    db.table('items').bulkAdd(items).then(() => {
-        console.log('Bulk added products successfully');
+    db.table('items').bulkAdd(items).then((products) => {
+        console.log('Bulk added products successfully', products);
     }).catch((err) => {
         console.error(err);
     });

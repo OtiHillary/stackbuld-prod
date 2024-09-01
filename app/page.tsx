@@ -27,9 +27,11 @@ export default function Home() {
   async function getProducts() {
     let query;  
     if (category !== 'All') {
-      query = db.table('items').where('category').equals(category);
+      query = db.table('items').where('category').equals(category)
+      console.log('query is: ',query);
+      ;
     } else {
-      query = db.table('items');
+      query = db.table('items')
     }
   
     productFetch.current = await query.toArray();
@@ -97,7 +99,6 @@ export default function Home() {
   return (
       <section className="h-[95%] m-auto p-4 w-11/12 mb-auto bg-slate-50  bg-opacity-15 backdrop-blur-sm border-opacity-20 rounded-xl flex flex-col justify-start relative"> 
         <div className="font-bold text-xl text-gray-600">
-          {/* <h1 className='border-s-2 border-[#FF8A65] ps-6 mb-3'>Categories</h1> */}
 
           <div className="flex flex-wrap justify-center mb-2">
             {
