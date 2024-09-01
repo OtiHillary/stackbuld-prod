@@ -24,7 +24,7 @@ export default function Home(){
         image: '',
         rating: 4
     }
-    const [ productData, setProductData ] = useState<product[]>(defaultProduct)
+    const [ productData, setProductData ] = useState<product>(defaultProduct)
     const [addSuccess, setAddSuccess] = useState(false)
     const router = useRouter()
 
