@@ -65,8 +65,6 @@ export default function Home(){
         async function addData(productData: { id: any; image: any; title: string; description: string; price: number; category: string; rating: number } | undefined) {
             console.log(productData)
             db.table('items').add(productData).then(() => {
-                setAddSuccess( prev => !prev )
-
                 setTimeout(()=>{
                     router.push('/')
                 }, 500)
@@ -76,10 +74,12 @@ export default function Home(){
             });            
         }
 
+        setAddSuccess( prev => !prev )
+
         const data = await fetch('/api/upload', {
             method: 'POST',
             body: formData,
-        })  
+        })
 
         const res = await data.json() 
         const imageData = await addImage(res.image)
@@ -146,9 +146,9 @@ export default function Home(){
                 style={{ display: addSuccess ? "" : "none" }}
                 className="bg-white p-4 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 text-center shadow-lg absolute rounded top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             >
-                <h1 className="font-bold text-xl my-2 text-green-600">Yayyyy</h1>
-                <p className="text-sm">Product added successfully</p>
-                <p className="font-bold text-gray-400 my-3">redirecting...</p>
+                <h1 className="font-bold text-xl my-2 text-green-600">Hold on!</h1>
+                <p className="text-sm">Adding product</p>
+                <p className="font-bold text-gray-400 my-3">Please wait...</p>
             </div>
         </form>
     )

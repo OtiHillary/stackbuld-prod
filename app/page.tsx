@@ -89,7 +89,7 @@ export default function Home() {
 
   useEffect(() => {
     getProducts()
-  }, [])
+  }, [productFilter])
 
   useEffect(() => {
     productFilter()
@@ -192,7 +192,7 @@ export default function Home() {
                           onClick={() => {
                             handleClick(index);
                           }}
-                          className="flex bg-[#FF8A65] active:bg-[#FF8A65] hover:bg-[#e47858] text-white rounded-xl mt-3 p-2 justify-center"
+                          className="flex bg-[#FF8A65] cursor-pointer active:bg-[#FF8A65] hover:bg-[#e47858] text-white rounded-xl mt-3 p-2 justify-center"
                         >
                           See Product
                         </div>

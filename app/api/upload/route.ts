@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import { uploadToGoogleDrive } from "@/lib/goggleDrive"
 
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
@@ -11,10 +10,10 @@ export async function POST(req: NextRequest) {
   }
 
   const buffer = Buffer.from(await file.arrayBuffer());
-  const filePath = path.join(process.cwd(), "public/uploads", file.name);
 
-  await fs.mkdir(path.dirname(filePath), { recursive: true });
-  await fs.writeFile(filePath, buffer);
+  // Uploading the file to Google Drive
+  const fileId = await uploadToGoogleDrive(file.name, buffer);
+  return NextResponse.json({ message: "File uploaded successfully", image: `https://drive.google.com/file/d/${fileId}/view` });
 
-  return NextResponse.json({ message: "File uploaded successfully", image: `/uploads/${file.name}` });
+
 }

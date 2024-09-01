@@ -118,7 +118,7 @@ export default function Home({ params }: { params: { product: string } }){
 
                     <Link
                     href={`/edit-products/${product.id}`}
-                    className="flex bg-[#FF8A65] active:bg-[#FF8A65] hover:bg-[#e47858] text-white p-2 rounded-xl mt-5 justify-center w-full"
+                    className="flex cursor-pointer bg-[#FF8A65] active:bg-[#FF8A65] hover:bg-[#e47858] text-white p-2 rounded-xl mt-5 justify-center w-full"
                     >
                         Edit
                     </Link>

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "stackbuld-434315",
+  "private_key_id": "9f003843a8a26ef38f407e68330a0f4c7f3eebe4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC9dKy8lQI7t3iY\nMPlJ2TjOp1jqfVwQyK2XHKbQlh8+QEveIFRMg6VJFrnyWmGUYEGGQYTpGDuTg3AX\nSezWsIo9Xd+f0pnNFLT9dqOA70HVVNcRj2TT1cZun8YtZ3Kv9GtSiqoy7M0K1H3c\nwdj5989Lh0CmIFODu7X/b8xLF0UEBZ30E9peS6rflCrdKCGy+F/rKFYkMjE6EEdy\n74tWxRSqof1yBk2DGfgeeEBwhQh0xj+dcwrlfkKfpx3EgDiijRTxFMYqcHwnnzVU\nmK5bP3R/07oFvwAIVmx0waQaiY8hAwczroSvco9N0TdA0QTkxU3X3Em0iIQXrVR0\n3icDw6wxAgMBAAECggEAARryJbN/giutghh0YTA+5Zhnq2PfKqCRFVrvGjPAq5NN\nHgGgRvCpq9snFePdwojWjlr0KeFLT66qSRMpqjhOG3zgYMVQwmKG38ervS/SztTM\n4GcEFpGeXmeDjMuYCVtqrjOYOe3UZbtxnzJo+qRYdZSswDYGEV8B+SMvf5dQ1BeA\nYKtprGdrnwGijOQytI3BOCaRH+a0BtjND5CA4RAyk+HpyJ10rm4Q2FHIc07EZ9g6\nMhQb/hu7r+8SLJwapkjJ+czwdyBhyzO0wEURcL7qDgN9DNbcOAEud/zuWvQ1joAp\nuj/RoZlFaL4uR90xuXxnyMuDGXYZmhzQXpKKwZ4sAQKBgQD2thtmNfr189XjuVxZ\n4pd7BeXYAwfgcY/ROURO3cFS2GqQiVvxOoqdJR8HN/f7CF+7PHRAFnfDQQg9lFVL\nzl34nUUoOVThGZ8gGYRGCiav8Fku+L39N9j6DvGQbVmCTL739oyN+GQe34jN52rX\nZ3sSxvK0HzINB/e+l8JOdse/QQKBgQDElre4zL5/9kjz+8pD2eQPJFe8Fh77J+tu\nnYD6ssUOxLg0+wet0xuO8VbsKMgqsrpo8d19NzdKP/ttdWTH9yeSOU7hhk01HJ6U\ndz045tfz7NrrP/OUpgn2ouwxNvcEiszyK83mlsJTaBW7OvNJYRS1BHA9N6/sGCKg\nUXNW/jCg8QKBgQCooQKLU1ws3rSUya649WsquHZItpGctKJjlKv+6A3qzWfRUUHZ\n2XTDQos5yOSj3i5o8UJYR8MmX339cTT38p9CfmS1wLImhffA3hAOO4QD/9lFhNl/\nibux96LfYA6tRD3HiOq7Y0sz2wBMFOBvSRjTVc6wlR4F0CtjR6GVNhUDwQKBgQC0\nFORjUprHGVKmvWYBVZ3GCSKdVx42L9FI2NsHy68b4jRjw/i60IGUJZvcZVdHVcXQ\n0I52X5g0Wfv1vu39B3imR/zsNlyPZJIXqkrYzw3Pko7PpRt6dcb2uTPnuVP6QzOO\nO3Y33q5QPS56/ntSIq4XS+ONEHAEs+80MKiZbewZ4QKBgC2BnOl0VbWjLKLLXVjY\nHrwErVp1uoh5zUKpRHa0YYk4xCgU80sSrWIqF9Hg+iPQp7sArARD0DYizTZ7Ek6g\nDcCE0+yDzYJh8MXSLEzDCkvuin6a0SWQd6JacQf+EB61wmFAKC9dAnR4a/g6FHdN\nzrn8roCOm6ZBXdWj+D0Jngdk\n-----END PRIVATE KEY-----\n",
+  "client_email": "otonye-edwin@stackbuld-434315.iam.gserviceaccount.com",
+  "client_id": "116496906340950411901",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/otonye-edwin%40stackbuld-434315.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
