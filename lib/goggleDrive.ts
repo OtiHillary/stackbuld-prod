@@ -1,9 +1,13 @@
 import { google } from 'googleapis';
 import streamifier from 'streamifier';
+import path from 'path';
+
+const filePath = path.join(process.cwd(), 'stackbuld.json');
+// console.log(filePath)
 
 export const uploadToGoogleDrive = async (fileName: string, fileBuffer: Buffer) => {
   const auth = new google.auth.GoogleAuth({
-    keyFile: 'stackbuld.json',
+    keyFile: filePath,
     scopes: ['https://www.googleapis.com/auth/drive.file'],
   });
 
