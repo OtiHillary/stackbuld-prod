@@ -25,10 +25,11 @@ export default function Home() {
   const router = useRouter();
 
   async function getProducts() {
-    let query = db.table('items');
-  
+    let query;  
     if (category !== 'All') {
-      query = query.where('category').equals(category);
+      query = db.table('items').where('category').equals(category);
+    } else {
+      query = db.table('items');
     }
   
     productFetch.current = await query.toArray();
