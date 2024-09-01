@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
+## Stackbuld frontend assessment
+# NextJS Proficiency
+- The task comprises of 4 routes;
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- /
+- products
+- add-products
+- edit-products
 ```
+2 of which is dynamically rendered using params and query.
+- An api route handler specifically for uploading images was created.
+- The use of a navbar and footer conponent to wrap the whole app using the `layout.tsx` was implemented
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Typescript Usage
+- The use of `.tsx, .ts` was used throughout the app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# SEO Compliance
+- Each page's metadata is applied in the `layout.tsx` file in their respective directories.
+- Using `next-sitemap` a stiemap and arobots.txt file was generated to improve the seo indexing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+# Performance Optimization
+- The project uses Dexie as a temprary db for storing the product data and is initialized with a bunch of data stored in the `@app/db.ts` file
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Tailwind CSS Integration
+- Reusable component styling was achieved
+- Responsive design using Tailwind’s utility-first approach was achieved
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Product Management Functionality
+- Features for users to edit existing products was achieved.
+- Features for users to delete products was achieved.
+- Features for users to add new products was achieved partially due to the nature of google api security for test applications and time considerations, I would rather discuss the approach in a later interview.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
