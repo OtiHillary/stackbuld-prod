@@ -1,5 +1,6 @@
 'use client'
 import { db } from '@/app/db'
+import { uploadUrl } from '@/app/url'
 import { IndexableType } from 'dexie'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
@@ -78,11 +79,13 @@ export default function Home({ params }: { params: { product: number } }){
             });            
         }
 
-        const data = await fetch('/api/upload', {
-            method: 'POST',
-            body: formData,
-        })  
-
+        const data = await fetch(
+            uploadUrl, 
+            {
+                method: 'POST',
+                body: formData,
+            }
+        )
         const res = await data.json() 
         const imageData = await addImage(res.image)
         const finalData = await addId(imageData)

@@ -2,6 +2,7 @@
 import { db } from '@/app/db'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { uploadUrl } from '@/app/url'
 
 type product = {
     id: number
@@ -76,11 +77,13 @@ export default function Home(){
 
         setAddSuccess( prev => !prev )
 
-        const data = await fetch('/api/upload', {
-            method: 'POST',
-            body: formData,
-        })
-
+        const data = await fetch(
+            uploadUrl, 
+            {
+                method: 'POST',
+                body: formData,
+            }
+        )
         const res = await data.json() 
         const imageData = await addImage(res.image)
         const finalData = await addId(imageData)

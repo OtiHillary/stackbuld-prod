@@ -33,4 +33,7 @@
 - Features for users to delete products was achieved.
 - Features for users to add new products was achieved partially due to the nature of google api security for test applications and time considerations, I would rather discuss the approach in a later interview.
 
-
+## How to run locally
+- Clone the repository
+- Run `npm i` to install all dependencies
+- Go to the `@/app/url.ts` file and change the url variable from `upload` to `upload-local`
